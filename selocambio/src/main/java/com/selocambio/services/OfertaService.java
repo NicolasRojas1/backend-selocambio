@@ -3,6 +3,9 @@ package com.selocambio.services;
 import com.selocambio.entities.OfertaModel;
 import com.selocambio.repositories.OfertaRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Sort;
+
+import java.util.List;
 
 @Service
 public class OfertaService {
@@ -24,6 +27,17 @@ public class OfertaService {
     public void eliminarOfertaById(Integer idOferta){
         ofertaRepository.deleteById(idOferta);
     }
+
+    public OfertaModel editarOfertaById( OfertaModel ofertaEdit){
+        //OfertaModel ofertaEncontrada = ofertaRepository.findById(idOferta).get();//
+          return ofertaRepository.save(ofertaEdit);
+    }
+
+    public List<OfertaModel> obtenerOfertas(){
+        return ofertaRepository.findAll();
+    }
+
+
 
 
 

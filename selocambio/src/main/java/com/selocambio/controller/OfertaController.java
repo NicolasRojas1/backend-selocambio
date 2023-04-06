@@ -3,10 +3,9 @@ package com.selocambio.controller;
 import com.selocambio.entities.OfertaModel;
 import com.selocambio.services.OfertaService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/oferta")
@@ -23,5 +22,28 @@ public class OfertaController {
         return ofertaService.crearOferta(ofertaModel);
     }
 
+
+    @PostMapping("/editar")
+    public Object editarOferta(@RequestBody OfertaModel ofertaModel){
+        return ofertaService.editarOfertaById(ofertaModel);
+    }
+
+    @GetMapping("/obtener")
+    public List<OfertaModel> obtenerOferta(){
+        return ofertaService.obtenerOfertas();
+    }
+
+    @GetMapping("/obtenerid")
+    public Object obtenetOferta(@RequestParam Integer id){
+        return ofertaService.obtenerOferta(id);
+    }
+
+    @DeleteMapping(value = "/eliminar/{id}")
+    public void eliminarOferta(@PathVariable Integer id){
+        ofertaService.eliminarOfertaById(id);
+
+    }
 }
+
+
 
