@@ -34,6 +34,9 @@ public class AdministradorModel {
     private String correo;
     @Column(name = "Codigo")
     private String codigo;
+    @Column (name = "Password")
+    private String password;
+
 
     //RELACION UNO A MUCHOS
     @OneToMany(mappedBy = "administradorModel", cascade = CascadeType.ALL)

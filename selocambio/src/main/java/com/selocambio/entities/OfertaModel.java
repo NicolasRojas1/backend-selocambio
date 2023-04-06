@@ -22,8 +22,8 @@ public class OfertaModel {
     private int idOferta;
     @Column(name = "nombreCli")
     private String nombreCli;
-    @Column(name = "telefonocli")
-    private String telefonocli;
+    @Column(name = "telefonoCli")
+    private String telefonoCli;
     @Column(name = "correoCli")
     private String correoCli;
     @Column(name = "interesCli")
@@ -37,9 +37,10 @@ public class OfertaModel {
     @Column(name = "imagenProd")
     private String imagenProd;
 
+
     //RELACION MUCHOS A UN ADMIN
     @ManyToOne
     @JoinColumn(name = "idAdministrador")
-    private AdministradorModel administradorModel;
+    AdministradorModel administradorModel;
 
 }
