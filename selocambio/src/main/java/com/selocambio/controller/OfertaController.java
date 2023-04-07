@@ -2,6 +2,7 @@ package com.selocambio.controller;
 
 import com.selocambio.entities.OfertaModel;
 import com.selocambio.services.OfertaService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,10 +39,10 @@ public class OfertaController {
     }
 
     @DeleteMapping(value = "/eliminar/{id}")
-    public void eliminarOferta(@PathVariable Integer id){
+    public void eliminarOfertaById(@PathVariable Integer id){
         ofertaService.eliminarOfertaById(id);
-
     }
+
 }
 
 
