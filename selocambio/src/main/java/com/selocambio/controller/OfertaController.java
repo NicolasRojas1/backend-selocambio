@@ -33,16 +33,16 @@ public class OfertaController {
         return ofertaService.obtenerOfertas();
     }
 
-    @GetMapping("/obtenerid")
-    public Object obtenetOferta(@RequestParam Integer id){
+    @GetMapping(value = "/obtener/{id}")
+    public Object obtenerOferta(@PathVariable Integer id){
         return ofertaService.obtenerOferta(id);
     }
 
     @DeleteMapping(value = "/eliminar/{id}")
-    public void eliminarOferta(@PathVariable Integer id){
+    public void eliminarOfertaById(@PathVariable Integer id){
         ofertaService.eliminarOfertaById(id);
-
     }
+
 }
 
 
