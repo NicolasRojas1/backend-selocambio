@@ -2,7 +2,6 @@ package com.selocambio.controller;
 
 import com.selocambio.entities.OfertaModel;
 import com.selocambio.services.OfertaService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,8 +32,8 @@ public class OfertaController {
         return ofertaService.obtenerOfertas();
     }
 
-    @GetMapping("/obtenerid")
-    public Object obtenetOferta(@RequestParam Integer id){
+    @GetMapping(value = "/obtener/{id}")
+    public Object obtenerOferta(@PathVariable Integer id){
         return ofertaService.obtenerOferta(id);
     }
 
