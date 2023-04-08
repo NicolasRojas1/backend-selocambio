@@ -1,5 +1,6 @@
 package com.selocambio.services;
 
+import com.selocambio.entities.AdministradorModel;
 import com.selocambio.entities.OfertaModel;
 import com.selocambio.repositories.OfertaRepository;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,13 @@ public class OfertaService {
         return ofertaRepository.findAll();
     }
 
+    public List<OfertaModel> buscarOfertaPorCategoria(String categoria) {
+        return ofertaRepository.buscarPorCategoria(categoria);
+    }
+
+    public List<OfertaModel> buscarOfertaPorNombreCli(String nombreCli) {
+        return ofertaRepository.buscarPorNombreCli(nombreCli);
+    }
 
 
 

@@ -42,6 +42,15 @@ public class OfertaController {
     public void eliminarOfertaById(@PathVariable Integer id){
         ofertaService.eliminarOfertaById(id);
     }
+    @GetMapping(value = "/buscar-categoria/{categoria}")
+    public List<OfertaModel> buscarPorCategoria(@PathVariable String categoria){
+        return ofertaService.buscarOfertaPorCategoria(categoria);
+    }
+
+    @GetMapping(value = "/buscar-nombreCliente/{nombrecli}")
+    public List<OfertaModel> buscarPorNombreCli(@PathVariable String nombrecli){
+        return ofertaService.buscarOfertaPorNombreCli(nombrecli);
+    }
 
 }
 
