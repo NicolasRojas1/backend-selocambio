@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface AdministradorRepository extends JpaRepository<AdministradorModel, Integer> {
-    @Query(value= "SELECT u from administrador u where u.nombre=:nombre" , nativeQuery = true )
+    @Query(value= "SELECT * from administrador where nombre=:nombre" , nativeQuery = true )
     List<AdministradorModel> buscarPorNombre(@Param("nombre") String nombre);
 
 }
