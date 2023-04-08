@@ -1,5 +1,6 @@
 package com.selocambio.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,28 +19,30 @@ public class OfertaModel {
     private static final long serialVersionUID = 2L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idOferta")
+    @Column(name = "idoferta")
     private int idOferta;
-    @Column(name = "nombreCli")
+    @Column(name = "nombrecli")
     private String nombreCli;
     @Column(name = "telefonocli")
-    private String telefonocli;
-    @Column(name = "correoCli")
+    private String telefonoCli;
+    @Column(name = "correocli")
     private String correoCli;
-    @Column(name = "interesCli")
+    @Column(name = "interescli")
     private String interesCli;
-    @Column(name = "nombreProd")
+    @Column(name = "nombreprod")
     private String nombreProd;
-    @Column(name = "categoriaProd")
+    @Column(name = "categoriaprod")
     private String categoriaProd;
-    @Column(name = "descripcionProd")
+    @Column(name = "descripcionprod")
     private String descripcionProd;
-    @Column(name = "imagenProd")
+    @Column(name = "imagenprod")
     private String imagenProd;
+
 
     //RELACION MUCHOS A UN ADMIN
     @ManyToOne
-    @JoinColumn(name = "idAdministrador")
-    private AdministradorModel administradorModel;
+    @JsonIgnore
+    @JoinColumn(name = "idadministrador")
+    AdministradorModel administradorModel;
 
 }

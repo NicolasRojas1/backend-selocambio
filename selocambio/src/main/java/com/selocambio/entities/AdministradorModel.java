@@ -18,25 +18,28 @@ public class AdministradorModel {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idAdministrador")
+    @Column(name = "idadministrador")
     private int idAdministrador;
-    @Column(name = "Nombre")
+    @Column(name = "nombre")
     private String nombre;
-    @Column(name = "Apellido")
+    @Column(name = "apellido")
     private String apellido;
-    @Column(name = "Dni")
+    @Column(name = "dni")
     private String dni;
-    @Column(name = "Edad")
+    @Column(name = "edad")
     private String edad;
-    @Column(name = "Telefono")
+    @Column(name = "telefono")
     private String telefono;
-    @Column(name = "Correo")
+    @Column(name = "correo")
     private String correo;
-    @Column(name = "Codigo")
+    @Column(name = "codigo")
     private String codigo;
+    @Column (name = "password")
+    private String password;
+
 
     //RELACION UNO A MUCHOS
-    @OneToMany(mappedBy = "administradorModel", cascade = CascadeType.ALL)
+   @OneToMany(mappedBy = "administradorModel", cascade = CascadeType.ALL)
     List<OfertaModel> ofertas;
 
 }
