@@ -23,5 +23,14 @@ public class AdministradorService {
         return administradorRepository.buscarPorNombre(nombre);
     }
 
+    public String validarLogin(String dni, String password, String codigo){
+        //return administradorRepository.validarLogin(dni, password, codigo);
+
+        if (administradorRepository.validarLogin(dni, password, codigo)== true){
+            return "Colado";
+        }else{
+            return "Pague pasaje";
+        }
+    }
 }
 

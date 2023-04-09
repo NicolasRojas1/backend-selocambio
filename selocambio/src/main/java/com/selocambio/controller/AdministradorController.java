@@ -32,5 +32,9 @@ public class AdministradorController {
         return administradorService.buscarAdminNombre(nombre);
     }
 
+    @PostMapping("/login")
+    public String validarLogin(@RequestBody String dni, String password, String codigo){
+        return administradorService.validarLogin(dni, password, codigo);
+    }
 
 }
