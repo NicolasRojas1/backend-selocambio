@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="selocambio" />
+        <module name="backend-selocambio" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="backend-selocambio" target="17" />
       <module name="selocambio" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="backend-selocambio" options="-parameters" />
       <module name="selocambio" options="-parameters" />
     </option>
   </component>

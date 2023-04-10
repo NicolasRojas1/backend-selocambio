@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/backend-selocambio.iml" filepath="$PROJECT_DIR$/.idea/backend-selocambio.iml" />
-      <module fileurl="file://$PROJECT_DIR$/selocambio/selocambio.iml" filepath="$PROJECT_DIR$/selocambio/selocambio.iml" />
     </modules>
   </component>
 </project>
