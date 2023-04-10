@@ -24,13 +24,17 @@ public class AdministradorService {
     }
 
     public String validarLogin(String dni, String password, String codigo){
-        //return administradorRepository.validarLogin(dni, password, codigo);
-
-        if (administradorRepository.validarLogin(dni, password, codigo)== true){
-            return "Colado";
-        }else{
-            return "Pague pasaje";
+        List<AdministradorModel> admin = administradorRepository.validarLogin(dni, password, codigo);
+        if (admin.size() > 0){
+            AdministradorModel administrador = admin.get(0);
+            if (administrador.getDni().equals(dni) && administrador.getPassword().equals(password) && administrador.getCodigo().equals(codigo)){
+                return "Haz iniciado sesión como " + administrador.getNombre() + ".";
+            }
         }
+        return "No tienes una cuenta registrada";
     }
+
+
+
 }
 
