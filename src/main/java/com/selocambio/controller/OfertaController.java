@@ -2,6 +2,7 @@ package com.selocambio.controller;
 
 import com.selocambio.entities.OfertaModel;
 import com.selocambio.services.OfertaService;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,9 +25,9 @@ public class OfertaController {
     }
 
 
-    @PostMapping("/editar")
-    public Object editarOferta(@RequestBody OfertaModel ofertaModel){
-        return ofertaService.editarOfertaById(ofertaModel);
+    @PostMapping(value = "/editar/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Object editarOferta(@PathVariable String id, @RequestBody OfertaModel ofertaModel){
+        return ofertaService.editarOfertaById(id, ofertaModel);
     }
 
     @GetMapping("/obtener")

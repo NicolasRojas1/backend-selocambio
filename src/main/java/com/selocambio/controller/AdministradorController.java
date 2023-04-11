@@ -1,6 +1,7 @@
 package com.selocambio.controller;
 
 import com.selocambio.entities.AdministradorModel;
+import com.selocambio.entities.OfertaModel;
 import com.selocambio.services.AdministradorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,11 @@ public class AdministradorController {
     @GetMapping("/buscar-nombre/{nombre}")
     public Object obtenerNombre(@PathVariable String nombre){
         return administradorService.buscarAdminNombre(nombre);
+    }
+
+    @GetMapping("/buscar")
+    public List<AdministradorModel> buscarAdmin(){
+        return administradorService.buscarAdmin();
     }
 
     @PostMapping("/login")

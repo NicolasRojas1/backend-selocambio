@@ -23,6 +23,10 @@ public class AdministradorService {
         return administradorRepository.buscarPorNombre(nombre);
     }
 
+    public List<AdministradorModel> buscarAdmin() {
+        return administradorRepository.buscarAdmin();
+    }
+
     public String validarLogin(String dni, String password, String codigo){
         List<AdministradorModel> admin = administradorRepository.validarLogin(dni, password, codigo);
         if (admin.size() > 0){
@@ -33,8 +37,6 @@ public class AdministradorService {
         }
         return "No tienes una cuenta registrada";
     }
-
-
 
 }
 
