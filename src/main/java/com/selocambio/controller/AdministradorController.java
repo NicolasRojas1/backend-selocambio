@@ -38,6 +38,11 @@ public class AdministradorController {
     @GetMapping("/buscar-id/{id}")
     public Object buscarAdminPorId(@PathVariable String id){ return administradorService.buscarAdminPorId(id); }
 
+    @GetMapping("/buscar-dni/{dni}")
+    public Object buscarAdminPorDni(@PathVariable String dni){
+        return administradorService.buscarAdminPorDni(dni);
+    }
+
     @GetMapping("/buscar")
     public List<AdministradorModel> buscarAdmin(){
         return administradorService.buscarAdmin();

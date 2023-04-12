@@ -28,6 +28,10 @@ public class AdministradorService {
         return administradorRepository.buscarAdminPorId(id);
     }
 
+    public List<AdministradorModel> buscarAdminPorDni(String dni) {
+        return administradorRepository.buscarAdminPorDni(dni);
+    }
+
     public List<AdministradorModel> buscarAdmin() {
         return administradorRepository.buscarAdmin();
     }
