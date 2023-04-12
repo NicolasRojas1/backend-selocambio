@@ -5,6 +5,7 @@ import com.selocambio.repositories.AdministradorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdministradorService {
@@ -21,6 +22,10 @@ public class AdministradorService {
 
     public List<AdministradorModel> buscarAdminNombre(String nombre) {
         return administradorRepository.buscarPorNombre(nombre);
+    }
+
+    public List<AdministradorModel> buscarAdminPorId(String id) {
+        return administradorRepository.buscarAdminPorId(id);
     }
 
     public List<AdministradorModel> buscarAdmin() {
