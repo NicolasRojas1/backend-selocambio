@@ -13,6 +13,9 @@ public interface AdministradorRepository extends JpaRepository<AdministradorMode
     @Query(value= "SELECT * from administrador where nombre=:nombre" , nativeQuery = true )
     List<AdministradorModel> buscarPorNombre(@Param("nombre") String nombre);
 
+    @Query(value= "SELECT * from administrador where idAdministrador=:idAdministrador" , nativeQuery = true )
+    List<AdministradorModel> buscarAdminPorId(@Param("idAdministrador") String idAdministrador);
+
     @Query(value= "SELECT * FROM administrador", nativeQuery = true )
     List<AdministradorModel> buscarAdmin();
 

@@ -35,6 +35,9 @@ public class AdministradorController {
         return administradorService.buscarAdminNombre(nombre);
     }
 
+    @GetMapping("/buscar-id/{id}")
+    public Object buscarAdminPorId(@PathVariable String id){ return administradorService.buscarAdminPorId(id); }
+
     @GetMapping("/buscar")
     public List<AdministradorModel> buscarAdmin(){
         return administradorService.buscarAdmin();
