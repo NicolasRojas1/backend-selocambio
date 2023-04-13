@@ -5,6 +5,7 @@ import com.selocambio.repositories.AdministradorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdministradorService {
@@ -23,6 +24,18 @@ public class AdministradorService {
         return administradorRepository.buscarPorNombre(nombre);
     }
 
+    public List<AdministradorModel> buscarAdminPorId(String id) {
+        return administradorRepository.buscarAdminPorId(id);
+    }
+
+    public List<AdministradorModel> buscarAdminPorDni(String dni) {
+        return administradorRepository.buscarAdminPorDni(dni);
+    }
+
+    public List<AdministradorModel> buscarAdmin() {
+        return administradorRepository.buscarAdmin();
+    }
+
     public String validarLogin(String dni, String password, String codigo){
         List<AdministradorModel> admin = administradorRepository.validarLogin(dni, password, codigo);
         if (admin.size() > 0){
@@ -33,8 +46,6 @@ public class AdministradorService {
         }
         return "No tienes una cuenta registrada";
     }
-
-
 
 }
 
